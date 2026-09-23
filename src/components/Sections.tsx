@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { Activity, Apple, ArrowDown, ArrowDownRight, ArrowRight, ArrowUpRight, Bone, Brain, Check, CircleArrowRight, Dna, Droplet, Droplets, Eye, Flame, Heart, HeartPulse, Minus, MoveUpRight, Plus, RefreshCcw, ShieldCheck, Sparkles, Wind } from "lucide-react";
 import { useSectionReveal } from "@/hooks/useSectionReveal";
@@ -10,7 +11,7 @@ import { Brand } from "./Navbar";
 export function Hero() {
   const ref = useSectionReveal();
   return <section ref={ref} className="hero section-reveal" aria-labelledby="hero-heading">
-    <div className="hero-content"><p className="eyebrow"><span className="tiny-line" /> A MORE PERSONAL APPROACH TO HEALTH</p><h1 id="hero-heading">Your health.<br />A higher<br /><em>perspective.</em></h1><p className="hero-description">Feel more like yourself. Live more of your life.<br className="desktop-break" /> Discover what’s possible with care that sees<br className="desktop-break" /> the whole of you.</p><div className="hero-actions"><BookButton /><a href="#baseline" className="text-link">Discover the Baseline <ArrowDownRight size={18} /></a></div><div className="hero-signature"><div className="portrait-mini"><Image src="/dr-charles.jpg" alt="" width={40} height={40} /></div><div>Expert-led. Individually designed.<span>With Dr. Charles Bareilles, Founder</span></div><div className="signature-line" /></div></div>
+    <div className="hero-content"><p className="eyebrow"><span className="tiny-line" /> A MORE PERSONAL APPROACH TO HEALTH</p><h1 id="hero-heading">Your health.<br />A higher<br /><em>perspective.</em></h1><p className="hero-description">Feel more like yourself. Live more of your life.<br className="desktop-break" /> Discover what’s possible with care that sees<br className="desktop-break" /> the whole of you.</p><div className="hero-actions"><BookButton /><a href="#baseline" className="text-link">Discover the Baseline <ArrowDownRight size={18} /></a></div><div className="hero-signature"><div className="portrait-mini"><Image src="/Charles-and-Glenn_Pelican-Hill-37-of-37_edited.jpg" alt="Dr. Charles Ball Bareilles" width={40} height={40} /></div><div>Expert-led. Individually designed.<span>With Dr. Charles Ball Bareilles, Founder</span></div><div className="signature-line" /></div></div>
     <div className="hero-visual" aria-hidden="true" style={{ width: '100%' }}>
       <div className="hero-photo">
         <Image src="/banner.png" alt="Hero banner" fill priority sizes="100vw" />
@@ -46,8 +47,35 @@ export function Ticker() {
 
 export function RedToBlack() {
   const ref = useSectionReveal();
-  return <section ref={ref} id="approach" className="section-reveal section-padding container"><div className="section-heading"><p className="eyebrow">THE PINNACLE PERSPECTIVE</p><div className="heading-split"><h2>There’s a difference between<br />getting by and <em>feeling alive.</em></h2><p className="body-copy">Your body is connected. Your care should be, too. We look beyond individual symptoms to understand the patterns shaping your health.</p></div></div><div className="philosophy-grid"><div className="philosophy-card deficit"><div className="card-top"><span className="eyebrow">WHERE YOU MIGHT BE</span><ArrowDownRight size={28} strokeWidth={1} /></div><div><span className="state-label">THE RED</span><h3>Running on empty.</h3><p>Low energy. Restless nights. A sense that something is off. Your body is asking for a closer look.</p></div><div className="state-tags"><span>Depletion</span><span>Imbalance</span><span>Compensation</span></div></div><div className="philosophy-bridge"><ArrowRight size={22} strokeWidth={1} /></div><div className="philosophy-card vitality"><div className="card-top"><span className="eyebrow">WHERE WE GO, TOGETHER</span><MoveUpRight size={28} strokeWidth={1} /></div><div><span className="state-label">THE BLACK</span><h3>Living with more.</h3><p>A path toward sustainable energy, better recovery, and the capacity to do more of what you love.</p></div><div className="state-tags"><span>Balance</span><span>Resilience</span><span>Vitality</span></div></div></div><div className="philosophy-note"><span>We call it <strong>Red to Black.</strong></span><span>A considered approach to a life well lived.</span></div></section>;
+  return <section ref={ref} id="approach" className="section-reveal section-padding container"><div className="section-heading"><p className="eyebrow"><span className="section-number">01 /</span> THE PINNACLE PERSPECTIVE</p><div className="heading-split"><h2>There’s a difference between<br />getting by and <em>feeling alive.</em></h2><p className="body-copy">Our unique Baseline approach will determine where you stand and where you need to be. <strong>Are you in the Red or are you in the Black?</strong> We look beyond individual symptoms to understand the patterns shaping your health.</p></div></div><div className="philosophy-grid"><div className="philosophy-card deficit"><div className="card-top"><span className="eyebrow">WHERE YOU MIGHT BE</span><ArrowDownRight size={28} strokeWidth={1} /></div><div><span className="state-label">THE RED</span><h3>Running on empty.</h3><p>Low energy. Restless nights. A sense that something is off. Your body is asking for a closer look.</p></div><div className="state-tags"><span>Depletion</span><span>Imbalance</span><span>Compensation</span></div></div><div className="philosophy-bridge"><ArrowRight size={22} strokeWidth={1} /></div><div className="philosophy-card vitality"><div className="card-top"><span className="eyebrow">WHERE WE GO, TOGETHER</span><MoveUpRight size={28} strokeWidth={1} /></div><div><span className="state-label">THE BLACK</span><h3>Living with more.</h3><p>A path toward sustainable energy, better recovery, and the capacity to do more of what you love.</p></div><div className="state-tags"><span>Balance</span><span>Resilience</span><span>Vitality</span></div></div></div><div className="philosophy-note"><span>We call it <strong>Red to Black.</strong></span><span>A considered approach to a life well lived.</span></div></section>;
 }
+
+const baselinePillars = [
+  {
+    icon: Activity,
+    tag: "CLINICAL METRICS",
+    title: "Biomarker Tracking",
+    desc: "Targeted clinical lab panels and continuous metabolic biomarkers to benchmark internal health."
+  },
+  {
+    icon: Dna,
+    tag: "DNA BLUEPRINT",
+    title: "Genetic Tests",
+    desc: "Decode your biochemical individuality and predispositions to optimize nutrition, detoxification, and methylation."
+  },
+  {
+    icon: ShieldCheck,
+    tag: "SYSTEMIC MAPPING",
+    title: "Health Questionnaires",
+    desc: "Comprehensive functional symptom evaluations across all 13 bodily systems to identify hidden root causes."
+  },
+  {
+    icon: Flame,
+    tag: "PHYSICAL CAPACITY",
+    title: "Endurance, Strength & Mobility",
+    desc: "Quantitative biomechanics, neuromuscular testing, and functional movement assessments to build lasting physical vitality."
+  }
+];
 
 const steps = [
   { number: "01", label: "Discover", time: "YOUR STARTING POINT", text: "An in-depth conversation and assessment to understand your history, your habits, and your goals.", icon: Eye },
@@ -58,7 +86,76 @@ const steps = [
 
 export function FourSteps() {
   const ref = useSectionReveal();
-  return <section ref={ref} id="baseline" className="baseline-section section-reveal section-padding"><div className="container"><div className="baseline-heading"><div><p className="eyebrow">THE 12-WEEK BASELINE</p><h2>Clarity first.<br /><em>Everything follows.</em></h2></div><div className="baseline-intro"><p className="body-copy">Understand where you are. Know where you’re going. Our signature 12-week program turns a deeper understanding of your health into a personal way forward.</p><BookButton className="text-link">Find your starting point</BookButton></div></div><div className="steps-grid">{steps.map(step => <article key={step.number} className="step"><div className="step-line"><span>{step.number}</span><step.icon size={24} strokeWidth={1.2} /></div><p className="eyebrow">{step.time}</p><h3>{step.label}</h3><p>{step.text}</p></article>)}</div><div className="baseline-bottom"><span><span className="status-dot" /> Thoughtful care. Every step of the way.</span><span>12 WEEKS &nbsp; / &nbsp; BUILT AROUND YOU</span></div></div></section>;
+  return (
+    <section ref={ref} id="baseline" className="baseline-section section-reveal section-padding">
+      <div className="container">
+        <div className="baseline-heading">
+          <div>
+            <p className="eyebrow"><span className="section-number">02 /</span> THE 12-WEEK BASELINE PROGRAM</p>
+            <h2>Join the 12-week Baseline program that will<br />transform your <em>health</em> and transform your <em>life.</em></h2>
+          </div>
+          <div className="baseline-intro">
+            <p className="body-copy">
+              Our unique Baseline approach will determine where you stand and where you need to be. <strong>Are you in the Red or are you in the Black?</strong>
+            </p>
+            <p className="body-copy" style={{ marginTop: '12px' }}>
+              This comprehensive health program is designed to make you proactive about your health. Leverage the power of Functional Medicine through Baseline so you can achieve <em>YOUR Pinnacle</em>.
+            </p>
+            <BookButton className="text-link" interest="12-Week Baseline Program">Find your starting point</BookButton>
+          </div>
+        </div>
+
+        <div className="baseline-pillars">
+          <div className="pillars-intro">
+            <span className="eyebrow">THE 4 PILLARS OF FUNCTIONAL MEDICINE ASSESSMENT</span>
+            <h3>Leverage the power of Functional Medicine through Baseline</h3>
+          </div>
+          <div className="pillars-grid">
+            {baselinePillars.map(pillar => (
+              <article key={pillar.title} className="pillar-card">
+                <div className="pillar-header">
+                  <span className="pillar-tag">{pillar.tag}</span>
+                  <pillar.icon size={22} strokeWidth={1.2} />
+                </div>
+                <h4>{pillar.title}</h4>
+                <p>{pillar.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="steps-grid">
+          {steps.map(step => (
+            <article key={step.number} className="step">
+              <div className="step-line">
+                <span>{step.number}</span>
+                <step.icon size={24} strokeWidth={1.2} />
+              </div>
+              <p className="eyebrow">{step.time}</p>
+              <h3>{step.label}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="baseline-bottom">
+          <span><span className="status-dot" /> Thoughtful care. Every step of the way.</span>
+          <span>12 WEEKS &nbsp; / &nbsp; BUILT AROUND YOU</span>
+        </div>
+
+        <div className="baseline-cta-banner">
+          <div className="baseline-cta-content">
+            <p className="eyebrow">TAKE COMMAND OF YOUR HEALTH</p>
+            <h3>We’ll show you exactly how. <em>Are you ready?</em></h3>
+            <p className="body-copy">Shift from reactive care to proactive vitality with Dr. Charles Bareilles.</p>
+          </div>
+          <BookButton interest="12-Week Baseline Program" className="button">
+            Begin your 12-Week Baseline
+          </BookButton>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 const systems = [
@@ -86,7 +183,7 @@ export function Systems13() {
 
 export function DrCharles() {
   const ref = useSectionReveal();
-  return <section ref={ref} id="doctor" className="doctor-section section-reveal container"><div className="doctor-image"><Image src="/dr-charles.jpg" alt="Dr. Charles Ball Bareilles, founder of Pinnacle Health Institute" fill sizes="(max-width: 760px) 100vw, 45vw" /><div className="doctor-image-label"><span>A PERSONAL COMMITMENT<br />TO YOUR POTENTIAL.</span><ArrowUpRight size={28} strokeWidth={1} /></div></div><div className="doctor-copy"><p className="eyebrow">THE PERSON BEHIND THE PERSPECTIVE</p><h2>Deep expertise.<br /><em>Human connection.</em></h2><p className="doctor-name">Dr. Charles Ball Bareilles<span>FOUNDER · CHIROPRACTIC KINESIOLOGIST</span></p><p className="body-copy">A career dedicated to understanding how the body works—and how it can work better for you.</p><p className="body-copy">With a background spanning sports medicine, Applied Kinesiology, and functional medicine, Dr. Charles brings a considered, whole-person perspective to every conversation. His philosophy is simple: listen closely, connect the dots, and make care personal.</p><div className="doctor-signature">Charles Bareilles<span>Care begins with understanding.</span></div><BookButton className="text-link">Start a conversation</BookButton></div></section>;
+  return <section ref={ref} id="doctor" className="doctor-section section-reveal container"><div className="doctor-image"><Image src="/Charles-and-Glenn_Pelican-Hill-37-of-37_edited.jpg" alt="Dr. Charles Ball Bareilles, Chiropractic Kinesiologist and Founder" fill sizes="(max-width: 760px) 100vw, 45vw" /><div className="doctor-image-label"><span>72 PGA TOUR ATHLETES<br />17+ MAJOR TITLES</span><ArrowUpRight size={28} strokeWidth={1} /></div></div><div className="doctor-copy"><p className="eyebrow"><span className="tiny-line" /> THE VISIONARY BEHIND THE SCIENCE</p><h2>The visionary behind<br /><em>the science.</em></h2><p className="doctor-name">Dr. Charles Ball Bareilles<span>CHIROPRACTIC KINESIOLOGIST · FOUNDER OF RED TO BLACK</span></p><p className="body-copy">The visionary founder of Pinnacle Health Institute and the groundbreaking Red to Black program. With over 20 years of experience in sports medicine, sports-specific training, and Functional Medicine, Dr. Bareilles is a leading expert in Applied Kinesiology and the creator of the Neurokinetics of Golf.</p><p className="body-copy">Through dedication to finding the root causes of imbalances, whether structural, biochemical, nutritional, or emotional, Dr. Bareilles&apos; goal is to create a new and personalized path for playing your best possible Golf. This innovative approach has been utilized by 72 PGA Tour Athletes with over 17 Major Titles in addition to thousands of other athletes and individuals outside of Golf.</p><div className="doctor-signature">Charles Bareilles<span>Care begins with understanding.</span></div><div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginTop: '24px', flexWrap: 'wrap' }}><BookButton className="button">Start a conversation</BookButton><Link href="/about" className="text-link">Read full story <ArrowUpRight size={16} strokeWidth={1.2} /></Link></div></div></section>;
 }
 
 export function Champions() {
