@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pinnacle Health Institute
 
-## Getting Started
+A responsive, editorial website for Pinnacle’s functional medicine practice. Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, Lucide icons, and Lenis.
 
-First, run the development server:
+## Run locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+npm install
+npm run dev -- --port 3005
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3005. In the current workspace, packages also resolve from the existing parent project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Connect consultations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and provide:
 
-## Learn More
+- `NEXT_PUBLIC_BOOKING_URL`: the clinic’s live HTTPS scheduler URL.
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`: the clinic’s international WhatsApp number, including country code.
 
-To learn more about Next.js, take a look at the following resources:
+Restart the development server or rebuild after changing these public values. Without them, consultation buttons open an informative dialog and the floating contact button opens the same dialog. The site does not collect or submit personal or medical data. With a booking URL, the dialog opens the scheduler; local interest/location choices are informational and are not transmitted to it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Checks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sh
+npm run lint
+npm run build
+```
 
-## Deploy on Vercel
+If the local Turbopack process cache has retained a sandbox permission error, `npm run build -- --webpack` uses Next.js’s alternate production compiler.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Browser checks covered 390, 768, 1024, and 1440 px widths; consultation opening, closing and preference selection; membership selection; mobile navigation; system tabs and keyboard navigation; FAQ accordions; image loading; and section anchors.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Content and assets
+
+- Prices and membership inclusions are based on the existing project. Confirm them with the clinic before publication.
+- Founder portrait: supplied local `dr-charles.jpg`.
+- Coastal photograph: https://images.unsplash.com/photo-1473116763249-2faaef81ccda (stored locally).
+- Geist font: locally hosted from the existing project’s font assets.
+- Testimonials and numerical outcomes have not been invented; the supporting section uses brand messaging instead.
+
+All section content is in `src/components/Sections.tsx`; navigation is in `Navbar.tsx`; global scrolling, cursor, contact actions, and consultation dialog are in `Experience.tsx`. Design tokens and responsive styles are in `src/app/globals.css`.
+
+Reduced motion is respected. Content stays readable without JavaScript, and custom cursor behavior is limited to precise pointers, with native cursor behavior restored inside dialogs.

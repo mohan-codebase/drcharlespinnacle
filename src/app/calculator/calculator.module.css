@@ -1,0 +1,152 @@
+.containerWrapper {
+  padding-top: 130px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  background-color: var(--background);
+  background: linear-gradient(135deg, #1f1f1f, #000);
+}
+
+.calcContainer {
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: #030303;
+  border-radius: 20px;
+  padding: 50px;
+  color: #fff;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 30px;
+}
+
+.tab {
+  background-color: #d1d5db;
+  color: #1f2937;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab.active {
+  background-color: #0066ff;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.inputGroup {
+  margin-bottom: 30px;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #eee;
+}
+
+.inputGroup label span {
+  color: #ff3b30;
+}
+
+.inputField {
+  width: 100%;
+  background-color: #000;
+  border: 1px solid #7a1515;
+  border-radius: 2px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #ff3b30;
+}
+
+.calcBtn {
+  background-color: #222;
+  color: #888;
+  border: none;
+  border-radius: 2px;
+  padding: 14px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 180px;
+  transition: all 0.2s;
+}
+
+.calcBtn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.resultWrapper {
+  margin-top: 60px;
+}
+
+.result {
+  font-size: 80px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+}
+
+.resultLabel {
+  font-size: 14px;
+  color: #888;
+  margin-top: 15px;
+}
+
+.rightColumn h3 {
+  font-size: 24px;
+  font-family: Georgia, serif;
+  margin-bottom: 24px;
+  font-weight: 400;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.rightColumn p {
+  color: #bbb;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.chartRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.blueText { color: #3b82f6; }
+.greenText { color: #22c55e; }
+.yellowText { color: #eab308; }
+.redText { color: #ef4444; }
+.darkRedText { color: #991b1b; }
