@@ -1,13 +1,14 @@
 "use client";
+
+import Link from "next/link";
 import { useState } from "react";
-import { Menu, Mountain, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { BookButton } from "./Experience";
 
-export function Brand() { return <a className="brand" href="#" aria-label="Pinnacle Health Institute home"><Mountain size={35} strokeWidth={1.15} /><span>PINNACLE<small>HEALTH INSTITUTE</small></span></a>; }
+export function Brand() { return <Link className="brand" href="/" aria-label="Pinnacle Health Institute home"><span>PINNACLE<small>HEALTH INSTITUTE</small></span></Link>; }
 
 const wixLinks = [
   { label: "Home", href: "/" },
-  { label: "Health Calculator", href: "/calculator" },
   { label: "Dashboard", href: "/dashboard" },
   { label: "Golf", href: "/golf" },
   { label: "About Us", href: "/about" },

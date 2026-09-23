@@ -2,11 +2,11 @@
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 160px;
-  padding-bottom: 120px;
+  padding-bottom: 64px;
 }
 
 .header {
-  margin-bottom: 50px;
+  margin-bottom: 28px;
 }
 
 .title {
@@ -241,6 +241,15 @@
 }
 
 @media (max-width: 960px) {
+  .aboutSection {
+    padding-top: 120px;
+    padding-bottom: 48px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -261,6 +270,15 @@
 }
 
 @media (max-width: 600px) {
+  .aboutSection {
+    padding-top: 100px;
+    padding-bottom: 36px;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
   .statsBar {
     grid-template-columns: 1fr;
   }

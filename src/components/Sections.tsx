@@ -15,10 +15,6 @@ export function Hero() {
     <div className="hero-visual" aria-hidden="true" style={{ width: '100%' }}>
       <div className="hero-photo">
         <Image src="/banner.png" alt="Hero banner" fill priority sizes="100vw" />
-        <div className="photo-topline">
-          <span>THE PINNACLE PERSPECTIVE</span>
-          <span>SANTA MONICA / NEWPORT COAST</span>
-        </div>
         <div className="orbital-mark">
           <div /><div /><div /><div /><div /><div />
         </div>
@@ -277,7 +273,6 @@ export function Footer() {
           <a href="#systems">13 functional systems</a>
           <a href="/dashboard">Member Dashboard</a>
           <a href="/science">Science & Clinical</a>
-          <a href="/calculator">Health Calculator</a>
           <a href="/store">Supplement Store</a>
         </div>
         <div>
